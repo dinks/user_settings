@@ -1,6 +1,8 @@
 # UserSettings
 
-TODO: Write a gem description
+[![Code Climate](https://codeclimate.com/github/dinks/user_settings.png)](https://codeclimate.com/github/dinks/user_settings)
+
+To save user based settings to redis, retrieve them and delete them.
 
 ## Installation
 
@@ -18,14 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-    The gem requires a Redis object to be passed for configuration as it stores
-    the key:value in Redis
+The gem requires a Redis object to be passed for configuration as it stores the key:value in Redis
 
 ### Configuration
 
-    Create an initializer with configuration
+Create an initializer with configuration
 
-    ```ruby
       require 'user_settings'
 
       UserSettings.configure do |c|
@@ -37,41 +37,35 @@ Or install it yourself as:
         c.route_drawer = MyCustomClass              # See UserSettings::RouteDrawers::Default
         c.expiration_time = 2.months                # Change the expiration time. 3.months is default
       end
-    ```
 
-    The default routes are
 
-    ```
+The default routes are
+
       get_user_settings GET    /usettings/:key(.:format) user_settings#show
       set_user_settings POST   /usettings/:key(.:format) user_settings#create
       set_once_user_settings PUT    /usettings/:key(.:format) user_settings#create_once
       remove_user_settings DELETE /usettings/:key(.:format) user_settings#destroy
-    ```
 
-    The storage is with respect to user and requires a conventional `@current_user` object with an
-    attribute `id` present. :|
+The storage is with respect to user and requires a conventional `@current_user` object with an
+attribute `id` present. :|
 
-    2 JavaScripts are to be included in the layout
+2 JavaScripts are to be included in the layout
 
-    For the main javascript file. You might want to add this to the `config.assets.precompile` in `production.rb`
+For the main javascript file. You might want to add this to the `config.assets.precompile` in `production.rb`
 
-    ```
       <%= javascript_include_tag_for_user_settings %>
-    ```
 
-    The user settings are to be initialized with your custom settings in places where you would use it
+The user settings are to be initialized with your custom settings in places where you would use it
 
-    ```
       <%= init_user_settings %>
-    ```
+
 
 ### How to use ?
 
-    The JavaScript used Promises and jQuery's Deferred which *emulates* Promises. Need to think about this more!
+The JavaScript used Promises and jQuery's Deferred which *emulates* Promises. Need to think about this more!
 
-    To get a key
+To get a key
 
-    ```
       $.userSettings.
         get('test').
         then(function(d) {
@@ -84,11 +78,9 @@ Or install it yourself as:
           // The response will have
           // - status -> 401 if unauthorized
         });
-    ```
 
-    To Set a key with a Value
+To Set a key with a Value
 
-    ```
       $.userSettings.
         set('test', 'two').
         then(function(d) {
@@ -101,11 +93,9 @@ Or install it yourself as:
           // The response will have
           // - status -> 401 if unauthorized
         });
-    ```
 
-    To Set a key with a Value *ONCE*
+To Set a key with a Value *ONCE*
 
-    ```
       $.userSettings.
         setOnce('test', 'two').
         then(function(d) {
@@ -118,11 +108,9 @@ Or install it yourself as:
           // The response will have
           // - status -> 401 if unauthorized
         });
-    ```
 
-    To Remove a key:value
+To Remove a key:value
 
-    ```
       $.userSettings.
         remove('test').
         then(function(d) {
@@ -132,7 +120,6 @@ Or install it yourself as:
           // The response will have
           // - status -> 401 if unauthorized
         });
-    ```
 
 ## Contributing
 
