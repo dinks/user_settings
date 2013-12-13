@@ -30,7 +30,7 @@ Create an initializer with configuration
 
       UserSettings.configure do |c|
 
-        redis = Redis.new({"host"=>"127.0.0.1", "port"=>6379, "db"=>0})
+        redis = Redis.new({ host: "127.0.0.1", port: 6379, db: 0 })
 
         c.redis = redis                             # Set the redis instance
         c.base_path = 'my_custom_base_path/'        # Set a custom base path. 'usettings/' is default
