@@ -3,34 +3,38 @@ require 'spec_helper'
 describe 'Routes' do
   context 'with default routes' do
     it 'should have get key route' do
-      expect(get: '/usettings/test').to route_to(
+      expect(get: '/usettings/test.json').to route_to(
         controller: 'user_settings',
         action:     'show',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
 
     it 'should have set key route' do
-      expect(post: '/usettings/test').to route_to(
+      expect(post: '/usettings/test.json').to route_to(
         controller: 'user_settings',
         action:     'create',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
 
     it 'should have set once key route' do
-      expect(put: '/usettings/test').to route_to(
+      expect(put: '/usettings/test.json').to route_to(
         controller: 'user_settings',
         action:     'create_once',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
 
     it 'should have remove key route' do
-      expect(delete: '/usettings/test').to route_to(
+      expect(delete: '/usettings/test.json').to route_to(
         controller: 'user_settings',
         action:     'destroy',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
   end
@@ -47,34 +51,38 @@ describe 'Routes' do
     end
 
     it 'should have get key route' do
-      expect(get: '/non_default_path/test').to route_to(
+      expect(get: '/non_default_path/test.json').to route_to(
         controller: 'user_settings',
         action:     'show',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
 
     it 'should have set key route' do
-      expect(post: '/non_default_path/test').to route_to(
+      expect(post: '/non_default_path/test.json').to route_to(
         controller: 'user_settings',
         action:     'create',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
 
     it 'should have set once key route' do
-      expect(put: '/non_default_path/test').to route_to(
+      expect(put: '/non_default_path/test.json').to route_to(
         controller: 'user_settings',
         action:     'create_once',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
 
     it 'should have remove key route' do
-      expect(delete: '/non_default_path/test').to route_to(
+      expect(delete: '/non_default_path/test.json').to route_to(
         controller: 'user_settings',
         action:     'destroy',
-        key:        'test'
+        key:        'test',
+        format:     'json'
       )
     end
   end
