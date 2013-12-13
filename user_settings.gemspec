@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dinesh.vasudevan@gmail.com"]
   spec.description   = %q{ Stores and Accesses User Settings }
   spec.summary       = %q{ Used to save/remove/update User Settings }
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/dinks/user_settings"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
