@@ -17,7 +17,7 @@ class UserSettingsController < ApplicationController
   end
 
   def destroy
-    presenter = UserSettingsPresenter.new UserSettings::Key.remove(@current_user.id, params[:key])
+    presenter = UserSettingsPresenter.new UserSettings::Key.destroy(@current_user.id, params[:key])
     render json: presenter.as_json
   end
 
@@ -26,8 +26,9 @@ class UserSettingsController < ApplicationController
     creation =  if once
                   UserSettings::Key.create(@current_user.id, params[:key], params[:value])
                 else
-                  UserSettingsPresenter.new UserSettings::Key.create_or_update(@current_user.id, params[:key], params[:value])
+                  UserSettings::Key.create_or_update(@current_user.id, params[:key], params[:value])
+                end
+
     UserSettingsPresenter.new creation
-    end
   end
 end

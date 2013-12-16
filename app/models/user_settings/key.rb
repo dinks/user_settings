@@ -17,7 +17,7 @@ module UserSettings
         UserSettings.redis.get redisable_key(user_id, key)
       end
 
-      def remove(user_id, key)
+      def destroy(user_id, key)
         UserSettings.redis.del redisable_key(user_id, key)
       end
 
