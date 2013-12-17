@@ -34,12 +34,15 @@ Create an initializer with configuration
 
         redis = Redis.new({ host: "127.0.0.1", port: 6379, db: 0 })
 
-        c.redis = redis                             # Set the redis instance
+        c.redis_options = {redis_connection: redis} # Set the redis instance
         c.base_path = 'my_custom_base_path/'        # Set a custom base path. 'usettings/' is default
         c.route_drawer = MyCustomClass              # See UserSettings::RouteDrawers::Default
         c.expiration_time = 2.months                # Change the expiration time. 3.months is default
       end
 
+Redis could also be configured by setting the `redis_options` like
+
+      { host: 'localhost', port: 6379, db: 1 }
 
 The default routes are
 
