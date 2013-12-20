@@ -1,7 +1,6 @@
 require "user_settings/version"
 require "user_settings/route_drawers/default"
 
-require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/core_ext'
 
 module UserSettings
