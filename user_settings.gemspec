@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.platform      = Gem::Platform::RUBY
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "redis"
@@ -30,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-debugger"
   spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "mock_redis"
+  spec.add_development_dependency "coveralls"
 end
