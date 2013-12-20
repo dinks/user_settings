@@ -29,6 +29,7 @@ The gem requires a Redis object to be passed for configuration as it stores the 
 
 Create an initializer with configuration
 
+      require 'redis'
       require 'user_settings'
 
       UserSettings.configure do |c|
