@@ -6,6 +6,9 @@ require 'rails/test_help'
 require 'rspec/rails'
 require 'capybara/rails'
 
+require 'coveralls'
+Coveralls.wear!
+
 Rails.backtrace_cleaner.remove_silencers!
 Capybara.default_driver = :rack_test
 Capybara.default_selector = :css
