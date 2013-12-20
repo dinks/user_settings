@@ -1,5 +1,6 @@
 # UserSettings
 
+[![Gem Version](https://badge.fury.io/rb/user_settings.png)](http://rubygems.org/gems/user_settings)
 [![Code Climate](https://codeclimate.com/github/dinks/user_settings.png)](https://codeclimate.com/github/dinks/user_settings)
 
 [![Travis](https://api.travis-ci.org/dinks/user_settings.png)](https://travis-ci.org/dinks/user_settings)
