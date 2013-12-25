@@ -4,6 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/dinks/user_settings.png)](https://codeclimate.com/github/dinks/user_settings)
 [![Travis](https://api.travis-ci.org/dinks/user_settings.png)](https://travis-ci.org/dinks/user_settings)
 [![Coverage Status](https://coveralls.io/repos/dinks/user_settings/badge.png)](https://coveralls.io/r/dinks/user_settings)
+[![Dependency Status](https://gemnasium.com/dinks/user_settings.png)](https://gemnasium.com/dinks/user_settings)
 
 To save user based settings to redis, retrieve them and delete them.
 

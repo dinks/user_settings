@@ -15,7 +15,6 @@ describe UserSettingsController do
       it 'returns failure' do
         response.should_not be_success
       end
-
     end
 
     context 'for set key' do
@@ -24,7 +23,6 @@ describe UserSettingsController do
       it 'returns failure' do
         response.should_not be_success
       end
-
     end
 
     context 'for set once key' do
@@ -33,7 +31,6 @@ describe UserSettingsController do
       it 'returns failure' do
         response.should_not be_success
       end
-
     end
 
     context 'for delete key' do
@@ -42,7 +39,6 @@ describe UserSettingsController do
       it 'returns failure' do
         response.should_not be_success
       end
-
     end
 
   end
@@ -83,7 +79,6 @@ describe UserSettingsController do
     end
 
     context 'for set key' do
-
       before do
         UserSettings::Key.stub(:create_or_update) { 'OK' }
       end
@@ -119,11 +114,9 @@ describe UserSettingsController do
           parsed_body['success'].should == true
         end
       end
-
     end
 
     context 'for set once key' do
-
       before do
         UserSettings::Key.stub(:create_or_update) { 'OK' }
       end
