@@ -139,3 +139,7 @@ To Remove a key:value
 
 [![Analytics](https://ga-beacon.appspot.com/UA-46793597-1/user_settings/readme)](https://github.com/dinks/user_settings)
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dinks/user_settings/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
