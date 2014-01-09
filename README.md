@@ -5,6 +5,7 @@
 [![Travis](https://api.travis-ci.org/dinks/user_settings.png)](https://travis-ci.org/dinks/user_settings)
 [![Coverage Status](https://coveralls.io/repos/dinks/user_settings/badge.png)](https://coveralls.io/r/dinks/user_settings)
 [![Dependency Status](https://gemnasium.com/dinks/user_settings.png)](https://gemnasium.com/dinks/user_settings)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dinks/user_settings/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 To save user based settings to redis, retrieve them and delete them.
 
@@ -138,8 +139,3 @@ To Remove a key:value
 5. Create new Pull Request
 
 [![Analytics](https://ga-beacon.appspot.com/UA-46793597-1/user_settings/readme)](https://github.com/dinks/user_settings)
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dinks/user_settings/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

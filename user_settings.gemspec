@@ -19,6 +19,8 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = ">= 1.9.3"
+
   spec.add_runtime_dependency "redis"
   spec.add_runtime_dependency "hiredis"
   spec.add_runtime_dependency "draper", "~> 1.3"
