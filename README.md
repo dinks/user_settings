@@ -6,6 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/dinks/user_settings/badge.png)](https://coveralls.io/r/dinks/user_settings)
 [![Dependency Status](https://gemnasium.com/dinks/user_settings.png)](https://gemnasium.com/dinks/user_settings)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dinks/user_settings/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![user_settings API Documentation](https://www.omniref.com/ruby/gems/user_settings.png)](https://www.omniref.com/ruby/gems/user_settings)
 
 To save user based settings to redis, retrieve them and delete them.
 
