@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Routes' do
+describe 'Routes', type: :routing do
   context 'with default routes' do
     it 'should have get key route' do
       expect(get: '/usettings/test.json').to route_to(

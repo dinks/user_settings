@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'json'
 
-describe UserSettingsController do
+describe UserSettingsController, type: :controller do
 
   context 'with no current user' do
 
