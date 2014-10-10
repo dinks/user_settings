@@ -4,9 +4,6 @@ language:
 before_install: gem install bundler
 install:
   - 'bundle install'
-gemfile:
-  - gemfiles/rails3.2.gemfile
-  - gemfiles/rails4.0.gemfile
 rvm:
   - 1.9.3
   - 2.0.0
