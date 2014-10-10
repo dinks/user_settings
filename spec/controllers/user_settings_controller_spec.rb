@@ -6,14 +6,14 @@ describe UserSettingsController, type: :controller do
   context 'with no current user' do
 
     before do
-      ApplicationController.any_instance.stub(:set_current_user) { true }
+      allow_any_instance_of(ApplicationController).to receive(:set_current_user).and_return(true)
     end
 
     context 'for get key' do
       before { get :show, key: :test, format: :json }
 
       it 'returns failure' do
-        response.should_not be_success
+        expect(response.status).to eq(401)
       end
     end
 
@@ -21,7 +21,7 @@ describe UserSettingsController, type: :controller do
       before { post :create, key: :test, value: :test, format: :json }
 
       it 'returns failure' do
-        response.should_not be_success
+        expect(response.status).to eq(401)
       end
     end
 
@@ -29,7 +29,7 @@ describe UserSettingsController, type: :controller do
       before { put :create_once, key: :test, value: :test, format: :json }
 
       it 'returns failure' do
-        response.should_not be_success
+        expect(response.status).to eq(401)
       end
     end
 
@@ -37,7 +37,7 @@ describe UserSettingsController, type: :controller do
       before { delete :destroy, key: :test, format: :json }
 
       it 'returns failure' do
-        response.should_not be_success
+        expect(response.status).to eq(401)
       end
     end
 
@@ -52,104 +52,104 @@ describe UserSettingsController, type: :controller do
         before { get :show, key: :test, format: :json }
 
         it 'returns success' do
-          response.should be_success
+          expect(response.status).to eq(200)
         end
 
         it 'should not find the key' do
           parsed_body = JSON.parse(response.body)
-          parsed_body['success'].should == false
+          expect(parsed_body['success']).to eql(false)
         end
       end
 
       context 'when a value exists' do
         before do
-          UserSettings::Key.stub(:find) { value }
+          allow(UserSettings::Key).to receive(:find).and_return(value)
           get :show, key: :test, format: :json
         end
 
         it 'returns success' do
-          response.should be_success
+          expect(response.status).to eq(200)
         end
 
         it 'should find the key' do
           parsed_body = JSON.parse(response.body)
-          parsed_body['value'].should == value
+          expect(parsed_body['value']).to eql(value)
         end
       end
     end
 
     context 'for set key' do
       before do
-        UserSettings::Key.stub(:create_or_update) { 'OK' }
+        allow(UserSettings::Key).to receive(:create_or_update).and_return('OK')
       end
 
       context 'when no value exists' do
         before do
-          UserSettings::Key.stub(:find) { false }
+          allow(UserSettings::Key).to receive(:find).and_return(false)
           post :create, key: :test, value: :test, format: :json
         end
 
         it 'returns success' do
-          response.should be_success
+          expect(response.status).to eq(200)
         end
 
         it 'should have success in json' do
           parsed_body = JSON.parse(response.body)
-          parsed_body['success'].should == true
+          expect(parsed_body['success']).to eql(true)
         end
       end
 
       context 'when value exists' do
         before do
-          UserSettings::Key.stub(:find) { true }
+          allow(UserSettings::Key).to receive(:find).and_return(true)
           post :create, key: :test, value: :test, format: :json
         end
 
         it 'returns success' do
-          response.should be_success
+          expect(response.status).to eq(200)
         end
 
         it 'should have success in json' do
           parsed_body = JSON.parse(response.body)
-          parsed_body['success'].should == true
+          expect(parsed_body['success']).to eql(true)
         end
       end
     end
 
     context 'for set once key' do
       before do
-        UserSettings::Key.stub(:create_or_update) { 'OK' }
+        allow(UserSettings::Key).to receive(:create_or_update).and_return('OK')
       end
 
       context 'when no value exists' do
         before do
-          UserSettings::Key.stub(:find) { false }
+          allow(UserSettings::Key).to receive(:find).and_return(false)
           put :create_once, key: :test, value: :test, format: :json
         end
 
         it 'returns success' do
-          response.should be_success
+          expect(response.status).to eq(200)
         end
 
         it 'should have success in json' do
           parsed_body = JSON.parse(response.body)
-          parsed_body['success'].should == true
+          expect(parsed_body['success']).to eql(true)
         end
       end
 
       context 'when value exists' do
         before do
-          UserSettings::Key.stub(:find) { true }
+          allow(UserSettings::Key).to receive(:find).and_return(true)
           put :create_once, key: :test, value: :test, format: :json
         end
 
         it 'returns success' do
-          response.should be_success
+          expect(response.status).to eq(200)
         end
 
         it 'should have success in json' do
           parsed_body = JSON.parse(response.body)
-          parsed_body['success'].should == false
+          expect(parsed_body['success']).to eql(false)
         end
       end
     end
@@ -158,7 +158,7 @@ describe UserSettingsController, type: :controller do
       before { delete :destroy, key: :test, format: :json }
 
       it 'returns success' do
-        response.should be_success
+        expect(response.status).to eq(200)
       end
 
     end
