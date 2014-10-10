@@ -29,9 +29,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "appraisal" # Check against different Rails Versions
-  spec.add_development_dependency "capybara", "= 2.0.3"
+  spec.add_development_dependency "capybara" #, "= 2.0.3"
   if RUBY_VERSION > "1.9"
-    spec.add_development_dependency "byebug"
+    spec.add_development_dependency "pry-byebug"
   else
     spec.add_development_dependency "pry-debugger"
   end
